@@ -1,4 +1,4 @@
-package test.spring.сonfig;
+package test.spring.config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -21,7 +21,6 @@ import test.spring.model.User;
 public class AppConfig {
     @Autowired
     private Environment env;
-
 
     @Bean
     public DataSource getDataSource() {

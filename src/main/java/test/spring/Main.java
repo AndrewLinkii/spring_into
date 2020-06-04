@@ -2,9 +2,9 @@ package test.spring;
 
 import java.util.List;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import test.spring.config.AppConfig;
 import test.spring.model.User;
 import test.spring.service.UserService;
-import test.spring.сonfig.AppConfig;
 
 public class Main {
     public static void main(String[] args) {
