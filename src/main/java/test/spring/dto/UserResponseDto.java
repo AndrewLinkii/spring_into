@@ -1,7 +1,5 @@
 package test.spring.dto;
 
-import test.spring.model.User;
-
 public class UserResponseDto {
     private String login;
     private String password;

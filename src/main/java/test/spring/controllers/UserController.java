@@ -21,13 +21,13 @@ public class UserController {
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
     public UserResponseDto get(@PathVariable Long userId) {
-        return new UserResponseDto(userService.getById(userId));
+        return new UserResponseDto();
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<UserResponseDto> getAll() {
         return userService.listUsers().stream()
-                .map(UserResponseDto::new)
+                .map(this::getUserDto)
                 .collect(Collectors.toList());
     }
 
@@ -36,5 +36,12 @@ public class UserController {
         userService.add(new User("klop", "11"));
         userService.add(new User("ignat", "22"));
         return "new users was successfully added";
+    }
+
+    private UserResponseDto getUserDto(User user) {
+        UserResponseDto userDto = new UserResponseDto();
+        userDto.setLogin(user.getLogin());
+        userDto.setPassword(user.getPassword());
+        return userDto;
     }
 }
