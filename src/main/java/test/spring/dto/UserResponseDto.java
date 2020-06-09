@@ -9,11 +9,6 @@ public class UserResponseDto {
     public UserResponseDto() {
     }
 
-    public UserResponseDto(User user) {
-        this.login = user.getLogin();
-        this.password = user.getPassword();
-    }
-
     public String getPassword() {
         return password;
     }
